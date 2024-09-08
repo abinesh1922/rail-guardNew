@@ -1,5 +1,5 @@
 import React from 'react';
-import PopupForm from './page1/PopupForm';
+import PopupForm from './components/PopupForm';
 import Header from './components/Header';
 
 const App = () => {
