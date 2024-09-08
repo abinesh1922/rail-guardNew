@@ -1,5 +1,13 @@
 /* PopupForm.css */
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style-type: none;
+}
+
 .overlay {
   position: fixed;
   top: 0;
@@ -21,15 +29,27 @@
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Full viewport height */
+}
+
 .complaint-button,
 .track-button {
   padding: 10px 20px;
-  margin-right: 10px;
-  background-color: #007bff;
+  margin: 10px 0; /* Margin between buttons */
+  background-color: #0c40d1; /* Primary color */
   color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+}
+
+.track-button {
+  background-color: #28a745; /* Different color for track button */
 }
 
 .option-button {
@@ -44,14 +64,7 @@
   margin-bottom: 10px;
 }
 
-.suggestion-box {
-  width: 100%;
-  padding: 10px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  margin-bottom: 10px;
-}
-
+.suggestion-box,
 .text-box {
   width: 100%;
   padding: 10px;
@@ -77,4 +90,91 @@
   border: none;
   border-radius: 4px;
   cursor: pointer;
+}
+
+/* PNRDetails.css */
+
+.pnr-details {
+  width: 90vw;
+  height: 120vh; /* Adjust height as needed */
+  margin: 20px;
+  font-family: Arial, sans-serif;
+  background-color: rgb(250, 216, 216);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.pnr-details h1,
+.pnr-details h2 {
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.pnr-details table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.pnr-details table,
+.pnr-details th,
+.pnr-details td {
+  border: 1px solid #ddd;
+}
+
+.pnr-details th,
+.pnr-details td {
+  padding: 8px;
+  text-align: left;
+}
+
+.pnr-details th {
+  background-color: #f2f2f2;
+}
+
+.pnr-details td strong {
+  font-weight: bold;
+}
+
+/* Button styles to match the PopupForm buttons */
+.pnr-details .submit-button,
+.pnr-details .cancel-button {
+  padding: 10px 20px;
+  margin-right: 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.pnr-details .cancel-button {
+  background-color: #dc3545;
+}
+
+.header {
+  width: 100%;
+  height: auto;
+  background-color: blue;
+  padding: 20px;
+}
+
+.header .content .title,
+.header .content .subtitle {
+  color: #fcfcfc;
+  padding: 0;
+}
+
+.header .content {
+  display: flex;
+  flex-direction: column;
+}
+
+.header .content .title {
+  font-size: 2rem;
+}
+
+.header .content .subtitle {
+  font-size: 1rem;
 }

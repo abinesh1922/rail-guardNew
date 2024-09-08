@@ -1,10 +1,11 @@
 import React from 'react';
 import PopupForm from './page1/PopupForm';
+import Header from './components/Header';
 
 const App = () => {
   return (
     <div>
-      <h1>Welcome to the Complaint Portal</h1>
+      <Header />
       <PopupForm />
     </div>
   );

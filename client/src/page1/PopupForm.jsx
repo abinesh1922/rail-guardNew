@@ -24,7 +24,6 @@ const PopupForm = () => {
       setTrainNumber('');
     }
   };
-
   const toggleTrackPopup = () => {
     setIsTrackOpen(!isTrackOpen);
   };
@@ -51,7 +50,7 @@ const PopupForm = () => {
   };
 
   const getPnrDetails = async () => {
-    const url = 'https://irctc-indian-railway-pnr-status.p.rapidapi.com/getPNRStatus/8319961705';
+    const url = `https://irctc-indian-railway-pnr-status.p.rapidapi.com/getPNRStatus/${pnr}`;
     const options = {
       method: 'GET',
       headers: {
@@ -72,7 +71,7 @@ const PopupForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Selected Option:', selectedOption);
-    if (journeyDetailType === 'PNR') {
+    if (journeyDetailType === 'PNR' && pnr) {
       getPnrDetails();
     } else if (journeyDetailType === 'UTS') {
       console.log('UTS Number:', utsNumber);
@@ -84,13 +83,15 @@ const PopupForm = () => {
 
   return (
     <div>
-      <button className="complaint-button" onClick={togglePopup}>
-        Complaint
-      </button>
+      <div className="button-container">
+        <button className="complaint-button" onClick={togglePopup}>
+          Complaint
+        </button>
 
-      <button className="track-button" onClick={toggleTrackPopup}>
-        Track Your Concern
-      </button>
+        <button className="track-button" onClick={toggleTrackPopup}>
+          Track Your Concern
+        </button>
+      </div>
 
       {isOpen && (
         <div className="overlay">

@@ -25,34 +25,93 @@ const PNRDetails = ({ pnrData }) => {
   return (
     <div className="pnr-details">
       <h1>PNR Details</h1>
-      <p><strong>PNR Number:</strong> {pnrNumber}</p>
-      <p><strong>Date of Journey:</strong> {dateOfJourney}</p>
-      <p><strong>Train Number:</strong> {trainNumber}</p>
-      <p><strong>Train Name:</strong> {trainName}</p>
-      <p><strong>Source Station:</strong> {sourceStation}</p>
-      <p><strong>Destination Station:</strong> {destinationStation}</p>
-      <p><strong>Reservation Upto:</strong> {reservationUpto}</p>
-      <p><strong>Boarding Point:</strong> {boardingPoint}</p>
-      <p><strong>Class:</strong> {journeyClass}</p>
-      <p><strong>Number of Passengers:</strong> {numberOfpassenger}</p>
-      <p><strong>Chart Status:</strong> {chartStatus}</p>
-      <p><strong>Booking Fare:</strong> ₹{bookingFare}</p>
-      <p><strong>Ticket Fare:</strong> ₹{ticketFare}</p>
-      <p><strong>Quota:</strong> {quota}</p>
-      <p><strong>Booking Date:</strong> {bookingDate}</p>
-      <p><strong>Arrival Date:</strong> {arrivalDate}</p>
-      <p><strong>Distance:</strong> {distance} km</p>
+      <table>
+        <tbody>
+          <tr>
+            <th>PNR Number:</th>
+            <td>{pnrNumber}</td>
+          </tr>
+          <tr>
+            <th>Date of Journey:</th>
+            <td>{dateOfJourney}</td>
+          </tr>
+          <tr>
+            <th>Train Number:</th>
+            <td>{trainNumber}</td>
+          </tr>
+          <tr>
+            <th>Train Name:</th>
+            <td>{trainName}</td>
+          </tr>
+          <tr>
+            <th>Source Station:</th>
+            <td>{sourceStation}</td>
+          </tr>
+          <tr>
+            <th>Destination Station:</th>
+            <td>{destinationStation}</td>
+          </tr>
+          <tr>
+            <th>Reservation Upto:</th>
+            <td>{reservationUpto}</td>
+          </tr>
+          <tr>
+            <th>Boarding Point:</th>
+            <td>{boardingPoint}</td>
+          </tr>
+          <tr>
+            <th>Class:</th>
+            <td>{journeyClass}</td>
+          </tr>
+          <tr>
+            <th>Number of Passengers:</th>
+            <td>{numberOfpassenger}</td>
+          </tr>
+          <tr>
+            <th>Chart Status:</th>
+            <td>{chartStatus}</td>
+          </tr>
+          <tr>
+            <th>Booking Fare:</th>
+            <td>₹{bookingFare}</td>
+          </tr>
+          <tr>
+            <th>Ticket Fare:</th>
+            <td>₹{ticketFare}</td>
+          </tr>
+          <tr>
+            <th>Quota:</th>
+            <td>{quota}</td>
+          </tr>
+          <tr>
+            <th>Booking Date:</th>
+            <td>{bookingDate}</td>
+          </tr>
+          <tr>
+            <th>Arrival Date:</th>
+            <td>{arrivalDate}</td>
+          </tr>
+          <tr>
+            <th>Distance:</th>
+            <td>{distance} km</td>
+          </tr>
+        </tbody>
+      </table>
 
       <h2>Passenger Details</h2>
-      <ul>
-        {passengerList.map((passenger, index) => (
-          <li key={index}>
-            <p><strong>Passenger {passenger.passengerSerialNumber}:</strong></p>
-            <p><strong>Booking Status:</strong> {passenger.bookingStatusDetails}</p>
-            <p><strong>Current Status:</strong> {passenger.currentStatusDetails}</p>
-          </li>
-        ))}
-      </ul>
+      <table>
+        <tbody>
+          {passengerList.map((passenger, index) => (
+            <tr key={index}>
+              <th>Passenger {passenger.passengerSerialNumber}:</th>
+              <td>
+                <strong>Booking Status:</strong> {passenger.bookingStatusDetails}<br />
+                <strong>Current Status:</strong> {passenger.currentStatusDetails}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };
